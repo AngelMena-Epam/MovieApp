@@ -15,11 +15,27 @@ class Welcome extends React.Component{
   }
 }
 
+class Description extends React.PureComponent {
+  render() {
+    const { movies_count, movies_added } = this.props;
+    return (
+      <div>
+        <p>
+          There are {movies_count} movies in the database.
+          <br />
+          There has been {movies_added} movies added for { new Date().getFullYear()}.
+        </p>
+      </div>
+    );
+  }
+}
+
 function App() {
   return (
     <div>
       <HelloWorld />
       <Welcome />
+      <Description movies_count="28152" movies_added="89" />
     </div>
     )
 }
